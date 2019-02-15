@@ -1,5 +1,7 @@
 # Message Files Originating in a Spreadsheet file Maven MOJO
 
+[![Build Status](https://travis-ci.org/dnlmrgn/ss-messages.svg?branch=master)](https://travis-ci.org/dnlmrgn/ss-messages)
+
 Sometimes it's very useful to keep all your language translations in a spreadsheet so that a translator
 can easily edit it without editing property file. This plugin can be incorporated in your project so
 property files can be automagically generated at build time from your spreadsheet.
