@@ -26,10 +26,10 @@ public class Generate extends AbstractMojo {
     private static final String NEW_LINE = "\n";
     private static final String COMMENT = "#";
 
-    @Parameter(defaultValue = "${project.build.sourceDirectory}/messages.xlsx", property = "spreadsheetFile")
+    @Parameter(defaultValue = "${project.basedir}/src/main/resources/messages.xlsx", property = "spreadsheetFile")
     private File spreadsheetFile;
 
-    @Parameter(defaultValue = "${project.build.sourceDirectory}/i18n", property = "outputDirectory")
+    @Parameter(defaultValue = "${project.basedir}/src/main/resources/i18n", property = "outputDirectory")
     private File outputDirectory;
 
     public void execute() throws MojoExecutionException {
@@ -48,7 +48,7 @@ public class Generate extends AbstractMojo {
             for (Sheet sheet : workbook)
                 writePropertyFile(workbook.getSheet(sheet.getSheetName()));
         } catch (Exception e) {
-            throw new MojoExecutionException("Unable to process spreadsheet file", e);
+            throw new MojoExecutionException("Unable to process spreadsheet file " + spreadsheetFile, e);
         }
     }
 
@@ -62,6 +62,7 @@ public class Generate extends AbstractMojo {
 
             String label = "";
             String value = "";
+
             for (Row row : sheet) {
                 if (row.getCell(0) != null)
                     label = row.getCell(0).getStringCellValue();

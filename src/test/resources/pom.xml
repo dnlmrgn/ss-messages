@@ -13,7 +13,7 @@
             <plugin>
                 <groupId>com.alef0</groupId>
                 <artifactId>ss-messages</artifactId>
-                <version>0.0.1-SNAPSHOT</version>
+                <version>1.0</version>
                 <configuration>
                     <spreadsheetFile>${basedir}/src/test/resources/messages.xlsx</spreadsheetFile>
                     <outputDirectory>${basedir}/target/test-classes/i18n</outputDirectory>
