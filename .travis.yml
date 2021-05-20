@@ -1,6 +1,6 @@
 language: java
 jdk:
-  - oraclejdk8
+  - oraclejdk11
 env:
   - MAVEN_VERSION=3.5.4
 notifications:
